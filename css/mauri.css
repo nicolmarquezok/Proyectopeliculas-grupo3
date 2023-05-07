@@ -1,0 +1,40 @@
+/*color del navbar */
+.nav2{
+     background: linear-gradient(180deg, rgba(81,0,0,1) 0%, rgba(0,0,0,1) 36%);
+}
+/*Este css es para el menu desplegable */
+.dropdown-menu{
+    background: linear-gradient(180deg, rgba(81,0,0,1) 0%, rgba(0,0,0,1) 36%); 
+    transition: 0,2 linear;
+}
+
+.dropdown-item:hover{
+    background: linear-gradient(180deg, rgba(81,0,0,1) 0%, rgba(0,0,0,1) 36%); 
+    color:#fff !important
+}
+/*ccs de los botones del navbar */
+.btn2{
+    background: linear-gradient(180deg, rgb(139, 15, 15) 0%, rgba(0,0,0,1) 36%);
+   color:#fff !important;
+   border: transparent;
+   width: 150px;
+   text-align: center;
+}
+.btn2:hover{
+    box-shadow: -30px -0px 50px rgb(185, 123, 123);
+   
+}
+.nav-item:hover{
+    box-shadow: -30px -0px 50px rgb(185, 123, 123);
+    border-radius:6px;
+}
+/* css del boton haburguesa*/
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='white' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+.navbar-toggler{
+  border: 2px solid white;
+}
+.navbar-toggler:focus{
+  box-shadow: none;
+}
