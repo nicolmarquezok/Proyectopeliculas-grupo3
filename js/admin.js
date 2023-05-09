@@ -1,11 +1,13 @@
 /*       Classes         */
 class Pelicula {
+    id;
     nombre;
     categoria
     descripcion;
     publicado;
 
-    constructor (nombre,categoria,descripcion,publicado) {
+    constructor (id,nombre,categoria,descripcion,publicado) {
+        this.id=id;
         this.nombre=nombre;
         this.categoria=categoria
         this.descripcion=descripcion
@@ -30,16 +32,19 @@ const categoriaInput = document.getElementById("Categoria")
 const descripcionInput = document.getElementById("message-text")
 const fechaInput = document.getElementById("date")
 const img_urlInput = document.getElementById("Url-Img")
+const tableBody =document.querySelector(`#cuerpoTabla`)
+
 
 
 //funciones que no esten en clases
+
+
 
 function guardarPeliculas(){
     const Catalagojosn= JSON.stringify(catalago)
     // AQUI ESTABA MAL ESCRITO DECIA catal*A*go ************************************************
     localStorage.setItem("catalogo",Catalagojosn)
 }
-
 
 function limpiarImputs(){
     tituloInput.value=""
@@ -64,6 +69,9 @@ function crearpelicula(event) {
 
     guardarPeliculas()
     limpiarImputs()
+   iniciarApp()
+    
+  
 }
 
 // Esta funcion cuando se ejecuta busca del localstorage el catalogo*******************************************
@@ -71,6 +79,21 @@ function iniciarApp() {
     const catalogoString = window.localStorage.getItem("catalogo")
     const catalogoParseado = JSON.parse(catalogoString)
     catalago.peliculas = catalogoParseado.peliculas
+
+    let trTable  ="";
+
+   catalogo.peliculas.forEach(function(pelicula,index){
+        trTable +="<tr>";
+        trTable += `<td> ${pelicula.id} </td>`
+        trTable += `<td> ${pelicula.nombre} </td>`
+        trTable += `<td> ${pelicula.categoria} </td>`
+        trTable += `<td> ${pelicula.descripcion} </td>`
+        trTable += `<td> ${pelicula.publicado} </td>`
+        trTable+= `<td><button type="button" class="btn btn-outline-secondary" onclick="editGame('${index}')">Edit</button>`;
+      trTable+=" </tr>";
+
+    });
+document.querySelector('#cuerpoTabla').innerHTML=trTable
 }
 
 //Eventos
