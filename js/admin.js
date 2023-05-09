@@ -14,7 +14,7 @@ class Pelicula {
 }
  class Catalago{
     peliculas
-     
+
     constructor(){
         this.peliculas=[]
     }
@@ -23,7 +23,7 @@ class Pelicula {
     }
  }
 /* Variables iniciales  */
- const catalago = new Catalago()
+const catalago = new Catalago()
 const form = document.getElementById("formulario")
 const tituloInput = document.getElementById("title")
 const categoriaInput = document.getElementById("Categoria")
@@ -36,7 +36,8 @@ const img_urlInput = document.getElementById("Url-Img")
 
 function guardarPeliculas(){
     const Catalagojosn= JSON.stringify(catalago)
-    localStorage.setItem("catalago",Catalagojosn)
+    // AQUI ESTABA MAL ESCRITO DECIA catal*A*go ************************************************
+    localStorage.setItem("catalogo",Catalagojosn)
 }
 
 
@@ -51,10 +52,11 @@ function limpiarImputs(){
 function crearpelicula(event) {
     event.preventDefault()
 
-    const titulo = tituloInput
-    const categoria= categoriaInput
-    const description = descripcionInput
-    const fecha = fechaInput
+    // Faltaba agregar el ".value" a cada input sino no tomaba el valor correcto ************************************
+    const titulo = tituloInput.value
+    const categoria= categoriaInput.value
+    const description = descripcionInput.value
+    const fecha = fechaInput.value
 
     const pelinueva = new Pelicula(titulo,categoria,description,fecha)
 
@@ -64,5 +66,15 @@ function crearpelicula(event) {
     limpiarImputs()
 }
 
+// Esta funcion cuando se ejecuta busca del localstorage el catalogo*******************************************
+function iniciarApp() {
+    const catalogoString = window.localStorage.getItem("catalogo")
+    const catalogoParseado = JSON.parse(catalogoString)
+    catalago.peliculas = catalogoParseado.peliculas
+}
+
 //Eventos
 form.addEventListener("submit", crearpelicula)
+
+// Bien se termina de cargar toda la pagina ejecutamos la funcion que busca lo que hay en el LocalStorage*************************************
+window.addEventListener("load", iniciarApp)
