@@ -1,0 +1,25 @@
+.body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.row {
+    height: auto;
+
+    
+    
+}
+.d-block {
+    border: 1px #2d293b solid;
+    border-radius: 20px;
+}
+
+
+
+.img-fluid {
+    width: 100%;
+}
+  
+
+
