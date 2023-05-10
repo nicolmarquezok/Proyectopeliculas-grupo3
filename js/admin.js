@@ -80,29 +80,35 @@ function renderTabla() {
     catalogo.peliculas.forEach(function (pelicula, index) {
         trTable += "<tr>";
         trTable += `<td> ${pelicula.id} </td>`
-        trTable += `<td><img src="${pelicula.imagen}}" alt="pelicula" width="250px"></img>  ${pelicula.nombre} </td>`
+        trTable += `<td><img src="${pelicula.imagen}}" alt="pelicula" width="150px"></img>  ${pelicula.nombre} </td>`
         trTable += `<td> ${pelicula.categoria} </td>`
-        trTable += `<td> ${pelicula.descripcion} </td>`
+        trTable += `<td class="text-center"> ${pelicula.descripcion} </td>`
         trTable += `<td> ${pelicula.publicado} </td>`
-        trTable += `<td><button type="button " class="btn btn-outline-warning me-2" onclick="showmodal(${pelicula.id})">Edit</button>
-        <button type="button" class="btn btn-outline-danger" onclick="eliminarPelicula('${index}')">Delete</button></td>`;
+        trTable += `<td class="d-flex justify-content-center"><button type="button " class="btn3 btn btn-outline-warning me-2 " onclick="showmodal(${pelicula.id})">Edit</button>
+        <button type="button" class="btn3 btn btn-outline-danger " onclick="eliminarPelicula('${index}')">Delete</button></td>`;
         trTable += " </tr>";
     });
     document.querySelector('#cuerpoTabla').innerHTML = trTable
 }
 
+
+function confirmarOperacion(){
+    return confirm("¿ Desea realizar esta operacion ?")
+}
+
 function eliminarPelicula(index){
-catalogo.peliculas.splice(index,1)
+ let confirmacion = confirmarOperacion()
+ if(confirmacion){
+ catalogo.peliculas.splice(index,1)
 renderTabla()
 guardarPeliculas()
-
+ }
 }
 let id_pelicula=null
 
 // En esta funcion uso el .find para encontrar el elemento por id por eso el pelicula.id 
 function showmodal(id){
-    editmodal.show()
-    
+    editmodal.show()   
     id_pelicula=id
 // guardo el arreglo que encontre por el id en la const peliculaEncontrada
    const peliculaEncontrada = catalogo.peliculas.find(pelicula => pelicula.id === id_pelicula)
@@ -114,7 +120,7 @@ function showmodal(id){
    const fechaInput2 = document.getElementById("dateEdit")
    const img_urlInput2 = document.getElementById("Url-ImgEdit")
 
-   // le  paso los datos al los elementos de la ventana modal
+// le  paso los datos al los elementos de la ventana modal
 
    tituloInput2.value=peliculaEncontrada.nombre
    categoriaInput2.value=peliculaEncontrada.categoria
@@ -126,6 +132,8 @@ function showmodal(id){
 function tablaeditada(event){
 
 // Ahora me importa la posicion de los elementos 
+let confiacioneditada=confirmarOperacion()
+if(confiacioneditada){
 const index = catalogo.peliculas.findIndex(pelicula => pelicula.id == id_pelicula )
 event.preventDefault()
 console.log(id_pelicula)
@@ -144,6 +152,7 @@ catalogo.peliculas[index].imagen      =   img_urlInput2.value
 renderTabla()
 guardarPeliculas()
 editmodal.hide()
+}
 }
 
 //Eventos

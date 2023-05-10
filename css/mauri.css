@@ -27,8 +27,16 @@
    text-align: center;
 }
 .btn2:hover{
-    box-shadow: -30px -0px 50px rgb(185, 123, 123);
-   
+    box-shadow: -30px -0px 50px rgb(185, 123, 123);   
+}
+.btn3{
+  width: 150px;
+  text-align: center;
+}
+.thedit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .nav-item:hover{
     box-shadow: -30px -0px 50px rgb(185, 123, 123);
