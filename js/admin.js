@@ -85,28 +85,3 @@ const admin = document.getElementById("admin");
 admin.style.display='none';
 
 
-// READ//
-
-function ReadData(){
-    let listPeople;
-if (localStorage.getItem('listPeople' ==null )) {
-    listPeople = [];
-
-    
-} else {
-    listPeople = JSON.parse(localStorage.getItem('listPeople'));
-}
-
-const html = "";
-listPeople.forEach(function(element,index) {
-    html += "<tr>";
-    html += "<td>" + element.formulario + "</td";
-    html += "<td>" + element.title + "</td";
-    html += "<td>" + element.formulario + "</td";
-    html += "</tr>";
-    
-} => {
-    
-});
-
-}

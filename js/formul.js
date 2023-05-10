@@ -37,4 +37,10 @@ function moveSlider() {
 bullets.forEach((bullet) => {
   bullet.addEventListener("click", moveSlider);
 });
+// LOCAL STORAGE//
+const = actualform = document.getElementById
+const = input-field = document.getElementById
+const = input-field = document.getElementById
+const = sign-btn    = document.getElementById
+
 
