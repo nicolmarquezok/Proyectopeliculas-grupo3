@@ -5,99 +5,148 @@ class Pelicula {
     categoria
     descripcion;
     publicado;
-
-    constructor (id,nombre,categoria,descripcion,publicado) {
-        this.id=id;
-        this.nombre=nombre;
-        this.categoria=categoria
-        this.descripcion=descripcion
-        this.publicado=publicado
+    imagen;
+    constructor(nombre, categoria, descripcion, publicado,imagen) {
+      
+        this.id=this.generarID()
+        this.nombre = nombre;
+        this.categoria = categoria;
+        this.descripcion = descripcion;
+        this.publicado = publicado;
+        this.imagen=imagen;
+    }
+    generarID() {
+        const id = Math.floor(Math.random() * 1000);
+        return id;
+        
     }
 }
- class Catalago{
+class Catalago {
     peliculas
+    constructor() {
+        this.peliculas = []
+    }
+    agregarpeliculas(pelicula) {
+        this.peliculas.push(pelicula)
+    }
+}
 
-    constructor(){
-        this.peliculas=[]
-    }
-    agregarpeliculas(pelicula){
-    this.peliculas.push(pelicula)
-    }
- }
 /* Variables iniciales  */
-const catalago = new Catalago()
+const editmodal = new bootstrap.Modal(document.getElementById('modaleditar'))
+const catalogo = new Catalago()
 const form = document.getElementById("formulario")
 const tituloInput = document.getElementById("title")
 const categoriaInput = document.getElementById("Categoria")
 const descripcionInput = document.getElementById("message-text")
 const fechaInput = document.getElementById("date")
 const img_urlInput = document.getElementById("Url-Img")
-const tableBody =document.querySelector(`#cuerpoTabla`)
-
-
+const tableBody = document.querySelector(`#cuerpoTabla`)
+const form2=document.getElementById("formulario2")
 
 //funciones que no esten en clases
-
-
-
-function guardarPeliculas(){
-    const Catalagojosn= JSON.stringify(catalago)
-    // AQUI ESTABA MAL ESCRITO DECIA catal*A*go ************************************************
-    localStorage.setItem("catalogo",Catalagojosn)
+function guardarPeliculas() {
+    const Catalagojosn = JSON.stringify(catalogo)
+    localStorage.setItem("catalogo", Catalagojosn)
 }
-
-function limpiarImputs(){
-    tituloInput.value=""
-    categoriaInput.value=""
-    descripcionInput.value=""
-    fechaInput.value=""
-    img_urlInput.value=""
+function limpiarImputs() {
+    tituloInput.value = ""
+    categoriaInput.value = ""
+    descripcionInput.value = ""
+    fechaInput.value = ""
+    img_urlInput.value = ""
 }
-
 function crearpelicula(event) {
     event.preventDefault()
-
-    // Faltaba agregar el ".value" a cada input sino no tomaba el valor correcto ************************************
     const titulo = tituloInput.value
-    const categoria= categoriaInput.value
+    const categoria = categoriaInput.value
     const description = descripcionInput.value
     const fecha = fechaInput.value
-
-    const pelinueva = new Pelicula(titulo,categoria,description,fecha)
-
-    catalago.agregarpeliculas(pelinueva)
-
+    const img_url = img_urlInput.value
+    const pelinueva = new Pelicula  (titulo, categoria, description, fecha,img_url)
+    catalogo.agregarpeliculas(pelinueva)
     guardarPeliculas()
     limpiarImputs()
-   iniciarApp()
-    
-  
+    iniciarApp()
+    renderTabla()
 }
-
-// Esta funcion cuando se ejecuta busca del localstorage el catalogo*******************************************
 function iniciarApp() {
     const catalogoString = window.localStorage.getItem("catalogo")
     const catalogoParseado = JSON.parse(catalogoString)
-    catalago.peliculas = catalogoParseado.peliculas
-
-    let trTable  ="";
-
-   catalogo.peliculas.forEach(function(pelicula,index){
-        trTable +="<tr>";
+    catalogo.peliculas = catalogoParseado.peliculas
+    renderTabla()
+}
+function renderTabla() {
+    let trTable = "";
+    catalogo.peliculas.forEach(function (pelicula, index) {
+        trTable += "<tr>";
         trTable += `<td> ${pelicula.id} </td>`
-        trTable += `<td> ${pelicula.nombre} </td>`
+        trTable += `<td><img src="${pelicula.imagen}}" alt="pelicula" width="250px"></img>  ${pelicula.nombre} </td>`
         trTable += `<td> ${pelicula.categoria} </td>`
         trTable += `<td> ${pelicula.descripcion} </td>`
         trTable += `<td> ${pelicula.publicado} </td>`
-        trTable+= `<td><button type="button" class="btn btn-outline-secondary" onclick="editGame('${index}')">Edit</button>`;
-      trTable+=" </tr>";
-
+        trTable += `<td><button type="button " class="btn btn-outline-warning me-2" onclick="showmodal(${pelicula.id})">Edit</button>
+        <button type="button" class="btn btn-outline-danger" onclick="eliminarPelicula('${index}')">Delete</button></td>`;
+        trTable += " </tr>";
     });
-document.querySelector('#cuerpoTabla').innerHTML=trTable
+    document.querySelector('#cuerpoTabla').innerHTML = trTable
+}
+
+function eliminarPelicula(index){
+catalogo.peliculas.splice(index,1)
+renderTabla()
+guardarPeliculas()
+
+}
+let id_pelicula=null
+
+// En esta funcion uso el .find para encontrar el elemento por id por eso el pelicula.id 
+function showmodal(id){
+    editmodal.show()
+    
+    id_pelicula=id
+// guardo el arreglo que encontre por el id en la const peliculaEncontrada
+   const peliculaEncontrada = catalogo.peliculas.find(pelicula => pelicula.id === id_pelicula)
+   
+// Declaro los campos del nuevo modal donde se cargaran los datos
+   const tituloInput2 = document.getElementById("titleEdit")
+   const categoriaInput2 = document.getElementById("CategoriaEdit")
+   const message_2 = document.getElementById("message_2")
+   const fechaInput2 = document.getElementById("dateEdit")
+   const img_urlInput2 = document.getElementById("Url-ImgEdit")
+
+   // le  paso los datos al los elementos de la ventana modal
+
+   tituloInput2.value=peliculaEncontrada.nombre
+   categoriaInput2.value=peliculaEncontrada.categoria
+   message_2.value=peliculaEncontrada.descripcion
+   fechaInput2.value=peliculaEncontrada.publicado
+   img_urlInput2.value=peliculaEncontrada.imagen
+}
+
+function tablaeditada(event){
+
+// Ahora me importa la posicion de los elementos 
+const index = catalogo.peliculas.findIndex(pelicula => pelicula.id == id_pelicula )
+event.preventDefault()
+console.log(id_pelicula)
+// Declaro los campos del nuevo modal donde se cargaran los datos
+const tituloInput2 = document.getElementById("titleEdit")
+const categoriaInput2 = document.getElementById("CategoriaEdit")
+const message_2 = document.getElementById("message_2")
+const fechaInput2 = document.getElementById("dateEdit")
+const img_urlInput2 = document.getElementById("Url-ImgEdit")
+
+catalogo.peliculas[index].nombre      =   tituloInput2.value
+catalogo.peliculas[index].categoria   =   categoriaInput2.value
+catalogo.peliculas[index].descripcion =   message_2.value
+catalogo.peliculas[index].publicado   =   fechaInput2.value
+catalogo.peliculas[index].imagen      =   img_urlInput2.value
+renderTabla()
+guardarPeliculas()
+editmodal.hide()
 }
 
 //Eventos
 form.addEventListener("submit", crearpelicula)
-
-// Bien se termina de cargar toda la pagina ejecutamos la funcion que busca lo que hay en el LocalStorage*************************************
+form2.addEventListener("submit", tablaeditada)
 window.addEventListener("load", iniciarApp)
