@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!--Formulario de contacto-->
+
+    <h1>¡Contáctanos!</h1>
+
+
+    <section class="container">
+
+        <form id="miFormulario">
+            <label class="label" for="nombre">Nombre</label><br>
+            <input class="losinput" type="text" id="nombre" name="nombre" required><br>
+            <br>
+            <label class="label" for="email">Email</label><br>
+            <input class="losinput" type="email" id="email" name="email" placeholder="ejemplo@gmail.com" required><br>
+            <br>
+            <label class="label" for="asunto">Asunto</label><br>
+            <input class="losinput" type="text" id="asunto" name="asunto" required><br>
+            <br>
+            <label class="label" for="mensaje">Mensaje</label><br>
+            <textarea class="losinput" id="mensaje" name="mensaje" placeholder="Sugerencias/quejas..."
+                required></textarea><br>
+
+            <button class="btn-enviar" type="submit">ENVIAR</button>
+        </form>
+
+    </section>
+
+
+
+
+
+
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
