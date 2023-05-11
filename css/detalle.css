@@ -1,0 +1,141 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    transition: all 0.35s linear;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url("/recursos/dragonposter.jpg");
+    background-size: cover;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(12px) contrast(80%);
+    color: white;
+}
+
+.info {
+    padding-top: 24px;
+   text-align: center;
+}
+
+.poster {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    transition: all 1.5s ease-in-out;
+}
+
+.poster img:hover {
+    transform: scale(1.5) rotateZ(5deg);
+}
+
+.info > div {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    margin-right: 32px;
+}
+
+.movie-title {
+    font-size: 64px;
+    font-weight: bold;
+    background-image: linear-gradient(45deg, #ff2a00,#ff0000);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.movie-detail .set {
+    display: inline-block;
+    margin-right: 64px
+}
+
+.movie-detail label {
+    font-size: 14px;
+    color: #ededed;
+    display: block;
+}
+
+.movie-detail span {
+    font-size: 22px;
+}
+
+.movie-description {
+    line-height: 24px;
+}
+
+.movie-cast .header {
+    font-size: 24px;
+    margin-bottom: 24px;
+}
+
+.movie-cast .list {
+    display: grid;
+    grid-template-columns: repeat(6,120px);
+    grid-gap: 32px;
+}
+
+.movie-cast .cast {
+    width: 120px;
+    height: 160px;
+    cursor: pointer;
+}
+
+.movie-cast img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 2px solid #cccccc;
+}
+
+.movie-cast .cast:hover img {
+    border-width: 0px;
+    transform: scale(1.1) rotateZ(-2deg);
+    box-shadow: -4px 4px 16px #00ffff,
+        4px -4px 16px #00ff00;
+}
+
+.movie-cast label {
+    margin-top: 8px;
+    display: block;
+}
+
+.movie-cast .cast:hover label {
+    margin-top: 24px;
+    color: #00ff00;
+    font-weight: medium;
+}
+
+@media only screen and 
+(min-width:600px){
+    .container{
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+.info{
+    padding: 24px;
+    text-align: left;
+
+}
+.poster{
+width: 50%;
+height: 100vh;
+
+}
+}

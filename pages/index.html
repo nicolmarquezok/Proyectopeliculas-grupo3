@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/45721989b8.css" crossorigin="anonymous"> 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="ppal.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    
+    <!-- <link rel="stylesheet" href="./css/mauri.css"> -->
+    
+    
+  </head>
+  <body style="background: linear-gradient(180deg, rgba(81,0,0,1) 0%, rgba(0,0,0,1) 86%);" class="text-white px-0">
+    
+    <!-- Navbar -->
+    <nav class="navbar sticky-top navbar navbar-expand-lg nav2 ">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="#"><img src="../imagenes/Logo/logo png.png" width="100px"></a>
+        <!-- Boton de colapso para responsive-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Menu" aria-controls="Menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Menu">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item "id="admin" >
+              <a class="nav-link active text-white" aria-current="page"  href="../pages/admin.html" >Administracion</a>
+            </li>
+            <li class="nav-item dropdown ">
+              <a class="nav-link dropdown-toggle  text-white"href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorias
+              </a>
+              <!--menu Dropdown-->
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item text-white" href="#">Action</a></li>
+                <li><a class="dropdown-item text-white" href="#">Animacion</a></li>
+                <li><a class="dropdown-item text-white" href="#">Terror</a></li>
+                <li><a class="dropdown-item text-white" href="#">Dramas</a></li>
+              </ul>
+              <!--Fin del menu Dropdown-->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active text-white" aria-current="page" href="#">Contacto</a>
+          </ul>
+          <ul class="navbar-nav">
+          </li>
+          <li class="nav-item ">
+            <a class="btn2 btn btn-outline-danger me-2" href="../pages/loginini.html">Iniciar sesion</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn2  btn  me-2 btn-outline-danger" href="../pages/signup.html">Suscribirse</a>
+          </li>
+          </ul>
+          <form class="d-flex" role="search">
+              <input class="form-control " type="search" placeholder="Buscar" aria-label="Search">
+              <button class="btn2 btn btn-outline-danger ms-2" type="submit">Buscar</button>
+            </form>
+        </div>
+      </div>
+     <!--Fin Boton de colapso para responsive-->
+    </nav>
+  <!--End nabnar -->
+    
+    
+    
+    
+    
+    <!-- Seccion Principal -->
+   <div class="row mb-5 w-100 pe-0 m-0">
+      <div class="col-md-12 col-12 px-0">
+        <div class="card-body px-0">
+          <div class="card text-bg-dark">
+             <video src="../imagenes/trailer2.mp4" autoplay  muted controls loop class="card-img border-top border-bottom border-secondary-subtle"></video>
+            <div class="card-img-overlay small text-break">
+              <h5 class="card-title mb-0">CAPITANA MARVEL</h5>
+              <p class="card-text mb-0"> <small>Una guerrera extraterrestre de la civilización Kree se encuentra atrapada en medio de una batalla. Con la ayuda de Nick Fury trata de descubrir los secretos de su pasado mientras aprovecha sus poderes para terminar la guerra.</small></p>
+              <p class="card-text "><small>Disponible en RollingFlix</small></p>
+              <a href="#"><button type="button" class="btn btn-outline-secondary mt-3 mb-3 transRight">REPRODUCIR</button></a> 
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    </div>
+    <br>
+    <!-- categoria 1 -->
+    <div class="container mt-5 text-center">
+      <section>
+        <div class="row mt-5">
+          <h2>Ciencia Ficcion</h2>
+          <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                <div class="col-md-4 col-4 float mb-3"><a href="../pages/spiderman.html"><img src="../imagenes/cf1.webp" class="rounded-3 img-fluid" alt=""></a></div>
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/cf2.webp" class="rounded-3 img-fluid" alt=""></a></div>
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/cf3.webp" class="rounded-3 img-fluid" alt=""></a></div>
+                
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                <div class="col-md-4  col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/cf4.webp" class="d-block w-100 rounded-3  img-fluid" alt=""></a></div>
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/cf5.webp" class="d-block w-100 rounded-3  img-fluid" alt=""></a></div>
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/cf6.webp" class="d-block w-100  rounded-3 img-fluid" alt=""></a></div>
+                </div>
+              </div>
+              
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <!-- categoria 2 -->
+        <div class="row my-5">
+          <h2>Terror</h2>
+          <div id="carouselExample1" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/tr1.webp" class="d-block w-100 rounded-3 " alt=""></a></div>
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/tr2.webp" class="d-block w-100 rounded-3 " alt=""></a></div>
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/tr3.webp" class="d-block w-100 rounded-3 " alt=""></a></div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/tr4.webp" class="d-block w-100 rounded-3  " alt=""></a></div>
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/tr5.webp" class="d-block w-100 rounded-3 " alt=""></a></div>
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/tr6.webp" class="d-block w-100  rounded-3 " alt=""></a></div>
+                </div>
+              </div>
+              
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          
+        </div>
+        <!-- categoria 3 -->
+        <div class="row my-5">
+          <h2 class="titulo">Animadas</h2>
+          <div id="carouselExample2" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/an1.webp" class="d-block w-100 rounded-3" alt=""></a></div>
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/an2.webp" class="d-block w-100 rounded-3" alt=""></a></div>
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/an3.webp" class="d-block w-100 rounded-3" alt=""></a></div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="row">
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/an4.webp" class="d-block w-100 rounded-3" alt=""></a></div>
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/an5.webp" class="d-block w-100 rounded-3" alt=""></a></div>
+                <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/an6.webp" class="d-block w-100 " alt=""></a></div>
+                </div>
+              </div>
+              
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+          <!-- Seccion 4 -->
+          <div class="row my-5">
+            <h2 class="titulo">Animadas</h2>
+            <div id="carouselExample3" class="carousel slide">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                  <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/ar1.webp" class="d-block w-100 rounded-3" alt=""></a></div>
+                  <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/ar2.webp" class="d-block w-100 rounded-3" alt=""></a></div>
+                  <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/ar3.webp" class="d-block w-100 rounded-3" alt=""></a></div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row">
+                  <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/ar4.webp" class="d-block w-100 rounded-3" alt=""></a></div>
+                  <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/ar5.webp" class="d-block w-100 rounded-3" alt=""></a></div>
+                  <div class="col-md-4 col-4 float mb-3"><a href="Webs/error404.html"><img src="../imagenes/ar6.webp" class="d-block w-100 " alt=""></a></div>
+                  </div>
+                </div>
+                
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample3" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample3" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            
+          </div>
+        </section> 
+      </div>
+      </section> 
+    </div>
+    
+    
+      
+    </div>
+    
+    <footer style="background: linear-gradient(180deg, rgba(81,0,0,1) 0%, rgba(0,0,0,1) 36%);" class="text-white">
+      <div>
+         <div class="custom-row d-flex ">
+          <div class="col-md-4 col-sm-12 d-flex justify-content-around  align-items-center flex-column text-center mb-2 ">
+              <a href="#" class="anclas">Sobre Nosotros</a>
+              <a href="#" class="anclas">planes y precios</a>
+              <a href="#" class="anclas">contacto</a>
+          </div>
+          <div class="col-md-4 col-sm-12 d-flex justify-content-around flex-column text-center mb-0">
+              <div class="custom-row">
+                  <div class="col-md-12 mt-4 mb-2-logo"><img src="../imagenes/logo png.png" alt="logo" width="400px" height="60px" style="filter: drop-shadow(0 0 0.75rem rgba(81,0,0,1));"></div>
+              </div>
+              <div class="custom-row d-flex">
+                  <div class="col-md-12 d-flex justify-around">
+                      <a href="#" class="list-group-item list-group-item-action mt-0"><i class="bi bi-instagram"></i> </a>
+                      <a href="#" class="list-group-item list-group-item-action mt-1"><i class="bi bi-twitter"></i> </a>
+                      <a href="#" class="list-group-item list-group-item-action mt-1"><i class="bi bi-facebook"></i></a>
+                  </div>
+              </div>
+  
+          </div>
+          <div class="col-md-4 d-flex align-items-center justify-content-around flex-column">
+              <a href="#" class="anclas">Terminos y condiciones</a> 
+              <a href="#" class="anclas">Preguntas Frecuentes</a>
+              <a href="#" class="anclas">Politica de cookies</a>
+              
+  
+          </div>
+         </div>
+      </div>
+      </footer> 
+
+
+    <script src="./js/oculto.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  </body>
+</html>
