@@ -10,68 +10,76 @@
     <!--Links-->
     <!--css-->
     <link rel="stylesheet" href="../css/mauri.css">
+    <link rel="stylesheet" href="../css/modal.css">
 
     <title>RollingflixAdmin</title>
 </head>
   <body>
      <!-- Navbar -->
-     <nav class="navbar sticky-top navbar navbar-expand-lg nav2 ">
-        <div class="container-fluid">
-          <a class="navbar-brand text-white" href="./index.html"><img src="">Rollingflix</a>
-          <!-- Boton de colapso para responsive-->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Menu" aria-controls="Menu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="Menu">
-            <ul class="navbar-nav me-auto">
+     <div class="container-fluid">
+       <nav class="navbar sticky-top navbar navbar-expand-lg nav2 ">
+          <div class="container-fluid">
+            <a class="navbar-brand text-white" href="./index.html"><img src="">Rollingflix</a>
+            <!-- Boton de colapso para responsive-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#Menu" aria-controls="Menu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="Menu">
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item "id="admin" >
+                  <a class="nav-link active text-white" aria-current="page"  href="" >Administracion</a>
+                </li>
+                <li class="nav-item dropdown ">
+                  <a class="nav-link dropdown-toggle  text-white"href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categorias
+                  </a>
+                  <!--menu Dropdown-->
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item text-white" href="#">Action</a></li>
+                    <li><a class="dropdown-item text-white" href="#">Animacion</a></li>
+                    <li><a class="dropdown-item text-white" href="#">Terror</a></li>
+                    <li><a class="dropdown-item text-white" href="#">Dramas</a></li>
+                  </ul>
+                  <!--Fin del menu Dropdown-->
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-white" aria-current="page" href="#">Contacto</a>
+              </ul>
+              <ul class="navbar-nav">
+              </li>
+              <li class="nav-item ">
+                <a class="btn2 btn btn-outline-danger me-2" href="">Iniciar sesion</a>
+              </li>
               <li class="nav-item">
-                <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
+                <a class="btn2  btn  me-2 btn-outline-danger" href="">Suscribirse</a>
               </li>
-              <li class="nav-item "id="admin" >
-                <a class="nav-link active text-white" aria-current="page"  href="" >Administracion</a>
-              </li>
-              <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle  text-white"href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Categorias
-                </a>
-                <!--menu Dropdown-->
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item text-white" href="#">Action</a></li>
-                  <li><a class="dropdown-item text-white" href="#">Animacion</a></li>
-                  <li><a class="dropdown-item text-white" href="#">Terror</a></li>
-                  <li><a class="dropdown-item text-white" href="#">Dramas</a></li>
-                </ul>
-                <!--Fin del menu Dropdown-->
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active text-white" aria-current="page" href="#">Contacto</a>
-            </ul>
-            <ul class="navbar-nav">
-            </li>
-            <li class="nav-item ">
-              <a class="btn2 btn btn-outline-danger me-2" href="">Iniciar sesion</a>
-            </li>
-            <li class="nav-item">
-              <a class="btn2  btn  me-2 btn-outline-danger" href="">Suscribirse</a>
-            </li>
-            </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control " type="search" placeholder="Buscar" aria-label="Search">
-                <button class="btn2 btn btn-outline-danger ms-2" type="submit">Buscar</button>
-              </form>
+              </ul>
+              <form class="d-flex" role="search">
+                  <input class="form-control " type="search" placeholder="Buscar" aria-label="Search">
+                  <button class="btn2 btn btn-outline-danger ms-2" type="submit">Buscar</button>
+                </form>
+            </div>
           </div>
-        </div>
-       <!--Fin Boton de colapso para responsive-->
-      </nav>
-    <!--End nabnar -->
+         <!--Fin Boton de colapso para responsive-->
+        </nav>
+      <!--End nabnar -->
+
+     </div>
     <!--Seccion 1-->
     <main>
         <div class="row container-fluid d-flex justify-content-center">
-        <section class="col">
+        <section class="row section1">
+          <div class="col-12">
           <h2 class="text-center">Lista de peliculas</h2>
-          <!--Este es el boton que abrira la ventana modal-->
-          <div class="d-flex justify-content-end"><button class="btn2 btn btn-outline-danger mb-3" data-bs-toggle="modal" data-bs-target="#modalcargar">Cargar</button></div>
-            <div class="table-resposive">              
+          </div>
+          <div class="col-12">
+            <!--Este es el boton que abrira la ventana modal-->
+            <div class=" col-12 flex justify-content-end"><button class="btn2 btn btn-outline-danger mb-3" data-bs-toggle="modal" data-bs-target="#modalcargar">Cargar</button></div>
+          </div>
+            <div class="table-resposive col-lg-12">              
               <table class="table table-bordered" >
                 <thead>
                     <tr >
@@ -92,7 +100,7 @@
           
             
             <!--Esta es la ventana modal-->
-            <div class="modal fade modal-dialog-scrollable modal-lg" id="modalcargar" tabindex="-1" aria-labelledby="modalcargar" aria-hidden="true" data-bs-backdrop="static" >
+            <div class="modal modal-fullscrean  fade modal-dialog-scrollable modal-lg" id="modalcargar" tabindex="-1" aria-labelledby="modalcargar" aria-hidden="true" data-bs-backdrop="static" >
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header" style=" background: linear-gradient(180deg, rgba(81,0,0,1) 0%, rgba(0,0,0,1) 36%);">
