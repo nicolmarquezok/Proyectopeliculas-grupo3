@@ -1,0 +1,46 @@
+
+.fullscreen-modal .modal-dialog {
+    margin: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    .fullscreen-modal .modal-dialog {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .fullscreen-modal .modal-dialog {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .fullscreen-modal .modal-dialog {
+       width: 1170px;
+    }
+  }
+
+  @media screen and (max-width: 480px ) {
+    img{
+        display:none;
+    }
+    table{
+        width: 100%;
+    }
+    table tr{
+       display: flex;
+       flex-direction: column;
+       border: 1px solid black;
+       padding: 10px;
+       margin-bottom: 10px;
+    }
+    table td[data-titulo]::before{
+       content: attr(data-titulo);
+       width: 100px;
+    }
+    table thead{
+        display: none;
+    }
+  }
+
