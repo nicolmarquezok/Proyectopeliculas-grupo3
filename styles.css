@@ -1,0 +1,44 @@
+body {
+    background-image: url(#);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.container{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: aliceblue;
+    width: 50%;
+    margin: auto;
+    padding: 1vh;
+    border-radius: 20px;
+}
+
+.losinput {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.btn-enviar {
+    color: red;
+    background: transparent;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.btn-enviar:hover {
+    background-color: rgba(81, 0, 0, 1);
+}
