@@ -48,6 +48,7 @@ function guardarPeliculas() {
     const Catalagojosn = JSON.stringify(catalogo)
     localStorage.setItem("catalogo", Catalagojosn)
 }
+
 function limpiarImputs() {
     tituloInput.value = ""
     categoriaInput.value = ""
@@ -69,21 +70,23 @@ function crearpelicula(event) {
     iniciarApp()
     renderTabla()
 }
+
 function iniciarApp() {
     const catalogoString = window.localStorage.getItem("catalogo")
     const catalogoParseado = JSON.parse(catalogoString)
     catalogo.peliculas = catalogoParseado.peliculas
     renderTabla()
 }
+
 function renderTabla() {
     let trTable = "";
     catalogo.peliculas.forEach(function (pelicula, index) {
         trTable += "<tr>";
-        trTable += `<td> ${pelicula.id} </td>`
-        trTable += `<td><img src="${pelicula.imagen}}" alt="pelicula" width="150px"></img>  ${pelicula.nombre} </td>`
-        trTable += `<td> ${pelicula.categoria} </td>`
-        trTable += `<td class="text-center"> ${pelicula.descripcion} </td>`
-        trTable += `<td> ${pelicula.publicado} </td>`
+        trTable += `<td data-titulo ="Codigo" > ${pelicula.id} </td>`
+        trTable += `<td data-titulo ="Titulo"><img src="${pelicula.imagen}}" alt="pelicula" width="150px"></img>  ${pelicula.nombre} </td>`
+        trTable += `<td data-titulo ="Categoria"> ${pelicula.categoria} </td>`
+        trTable += `<td data-titulo ="Descripcion"> ${pelicula.descripcion} </td>`
+        trTable += `<td data-titulo ="Publicado"> ${pelicula.publicado} </td>`
         trTable += `<td class="d-flex justify-content-center"><button type="button " class="btn3 btn btn-outline-warning me-2 " onclick="showmodal(${pelicula.id})">Edit</button>
         <button type="button" class="btn3 btn btn-outline-danger " onclick="eliminarPelicula('${index}')">Delete</button></td>`;
         trTable += " </tr>";
@@ -132,11 +135,13 @@ function showmodal(id){
 function tablaeditada(event){
 
 // Ahora me importa la posicion de los elementos 
+
 let confiacioneditada=confirmarOperacion()
 if(confiacioneditada){
 const index = catalogo.peliculas.findIndex(pelicula => pelicula.id == id_pelicula )
 event.preventDefault()
 console.log(id_pelicula)
+
 // Declaro los campos del nuevo modal donde se cargaran los datos
 const tituloInput2 = document.getElementById("titleEdit")
 const categoriaInput2 = document.getElementById("CategoriaEdit")
@@ -154,6 +159,7 @@ guardarPeliculas()
 editmodal.hide()
 }
 }
+
 
 //Eventos
 form.addEventListener("submit", crearpelicula)
