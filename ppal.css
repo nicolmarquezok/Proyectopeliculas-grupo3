@@ -12,14 +12,20 @@
 }
 .d-block {
     border: 1px #2d293b solid;
-    border-radius: 20px;
+    /* border-radius: 20px; */
 }
 
-
+.borders {
+    border-radius: 20px;
+}
 
 .img-fluid {
     width: 100%;
 }
+
+              
+
+              
   
 
 
